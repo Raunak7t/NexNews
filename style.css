@@ -1,0 +1,196 @@
+:root {
+  --primary-text-color: #ffffff;
+  --secondary-text-color: #e8e8e8e8;
+  --primary-bg-color: #2c2d3d;
+  --secondary-bg-color: #161629;
+  --tertiary-bg-color: #000000;
+  --transparent-bg-color: #1616296b;
+  --accent-color: #20cede;
+  --accent-color-2: #fe83c1;
+}
+.light {
+  --primary-text-color: #00001a;
+  --secondary-text-color: #32313de8;
+  --primary-bg-color: #ffffff;
+  --secondary-bg-color: #d8e2e7;
+  --tertiary-bg-color: #c6ccd8;
+  --transparent-bg-color: #e6f8ffaf;
+  --accent-color: #1aa7c0;
+  --accent-color-2: #dd3dba;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--primary-text-color);
+  background-image: linear-gradient(
+      to right,
+      #0000,
+      var(--tertiary-bg-color) 55%
+    ),
+    url(worldmap.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  backdrop-filter: blur(3px);
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-text-color);
+}
+
+.main-container {
+  width: 90vw;
+  margin-inline: auto;
+}
+
+.logo {
+  cursor: pointer;
+}
+.logo span:first-child {
+  color: var(--accent-color);
+}
+.logo span:last-child {
+  color: var(--accent-color-2);
+}
+
+.btn {
+  cursor: pointer;
+  background-color: var(--accent-color-2);
+  color: var(--secondary-text-color);
+  padding: 3px 13px;
+  border-radius: 7px;
+  border: 2px solid var(--accent-color);
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+.btn:hover {
+  background-color: var(--accent-color);
+  box-shadow: 0px 0px 8px 1px var(--accent-color);
+}
+
+nav {
+  background-color: var(--secondary-bg-color);
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  width: 100vw;
+  height: 8vh;
+  box-shadow: 0px 0px 10px 4px var(--tertiary-bg-color);
+  border-bottom: 1px solid var(--tertiary-bg-color);
+}
+nav .main-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+.search-bar input {
+  padding: 3px 13px;
+  border-radius: 7px;
+  border: 2px solid var(--accent-color-2);
+  font-weight: 500;
+  font-size: 1rem;
+  width: 10rem;
+}
+#theme {
+  font-size: 1.6rem;
+  transform: rotate(80deg);
+  transition: all 0.5s;
+}
+#theme.active {
+  transform: rotate(0deg);
+}
+
+aside {
+  height: 92vh;
+  width: 20%;
+  position: fixed;
+  bottom: 0;
+  background: var(--transparent-bg-color);
+}
+.menu {
+  padding-left: 3vw;
+  padding-top: 3vw;
+}
+
+.menu h3 {
+  cursor: pointer;
+  display: block;
+  margin-block: 5px;
+  padding: 15px 25px;
+  text-transform: uppercase;
+  color: var(--primary-text-color);
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  margin-bottom: 1px;
+  transition: all ease 0.3s;
+}
+
+.menu h3.active {
+  background: var(--primary-text-color);
+  color: var(--secondary-bg-color);
+  box-shadow: -2px 2px 7px var(--accent-color);
+  padding-left: 30px;
+}
+.menu h3:hover {
+  scale: 1.1;
+  padding-left: 35px;
+}
+.menu h3.active:hover {
+  scale: 1;
+  padding-left: 30px;
+}
+
+main {
+  position: fixed;
+  width: 80%;
+  height: 92vh;
+  right: 0;
+  bottom: 0;
+  padding: 1.5rem;
+  padding-right: 3.5vw;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.news-boxes {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  row-gap: 3rem;
+  flex-wrap: wrap;
+}
+.news-box {
+  cursor: pointer;
+  width: 31%;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0px 0px 7px var(--accent-color-2);
+  background-color: var(--secondary-bg-color);
+  transition: all 0.3s;
+}
+.news-box:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 2px 2px 9px var(--accent-color);
+  background-color: var(--primary-bg-color);
+}
+.news-box img {
+  width: 100%;
+  height: 12rem;
+  object-fit: cover;
+}
+.news-content {
+  padding: 20px;
+}
+#news-src {
+  margin: 1rem 0.5rem;
+}
